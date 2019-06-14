@@ -1,7 +1,7 @@
 ﻿using System;
 using NUnit.Framework;
 using OpenQA.Selenium;
-using Selenium_CS_Cucumber.pageObjects;
+using Selenium_CS_POM.pageObjects;
 using TechTalk.SpecFlow;
 
 namespace Selenium_CS_POM.pageSteps
