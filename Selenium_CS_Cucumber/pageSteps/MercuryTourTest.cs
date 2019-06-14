@@ -4,7 +4,7 @@ using OpenQA.Selenium;
 using Selenium_CS_Cucumber.pageObjects;
 using TechTalk.SpecFlow;
 
-namespace Selenium_CS_Cucumber.pageSteps
+namespace Selenium_CS_POM.pageSteps
 {
     [Binding]
     public class MercuryTourTest

@@ -1,10 +1,9 @@
 ﻿using System;
 using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Firefox;
-using Selenium_CS_Cucumber.pageObjects;
+using Selenium_CS_POM.pageObjects;
 
-namespace Selenium_CS_Cucumber.testCases
+namespace Selenium_CS_POM.testCases
 {
     public class MercuryTourTest
     {

@@ -1,8 +1,6 @@
-﻿using System;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+﻿using OpenQA.Selenium;
 
-namespace Selenium_CS_Cucumber.pageObjects
+namespace Selenium_CS_POM.pageObjects
 {
     public class ConfirmationPage
     {

@@ -7,7 +7,7 @@ using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Safari;
 using OpenQA.Selenium.Support.UI;
 
-namespace Selenium_CS_Cucumber.Utils
+namespace Selenium_CS_POM.Utils
 {
     public static class Utils
     {
