@@ -8,11 +8,9 @@ namespace Selenium_CS_Cucumber.pageObjects
     {
         private IWebDriver driver;
 
-        [FindsBy(How = How.XPath, Using = "//*/tbody/tr[7]/td/table/tbody/tr/td[2]/a")]
-        public IWebElement backToHomeBtn { get; set; }
+        public IWebElement backToHomeBtn => driver.FindElement(By.XPath("//*/tbody/tr[7]/td/table/tbody/tr/td[2]/a"));
 
-        [FindsBy(How = How.XPath, Using = "//*/tbody/tr[7]/td/table/tbody/tr/td[3]/a")]
-        public IWebElement logoutBtn { get; set; }
+        public IWebElement logoutBtn => driver.FindElement(By.XPath("//*/tbody/tr[7]/td/table/tbody/tr/td[3]/a"));
 
         public ConfirmationPage(IWebDriver driver)
         {

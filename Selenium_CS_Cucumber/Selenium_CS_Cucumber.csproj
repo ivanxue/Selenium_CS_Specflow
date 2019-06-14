@@ -5,13 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="NUnit" Version="3.12.0" />
-    <PackageReference Include="NUnit3TestAdapter" Version="3.13.0" />
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
-    <PackageReference Include="Selenium.Support" Version="3.141.0" />
-    <PackageReference Include="DotNetSeleniumExtras.PageObjects" Version="3.11.0" />
     <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
-    <PackageReference Include="Cucumber.Pro.SpecFlowPlugin" Version="1.0.1" />
+    <PackageReference Include="NUnitTestAdapter" Version="2.0.0" />
+    <PackageReference Include="Selenium.Support" Version="3.10.0" />
+    <PackageReference Include="SpecFlow" Version="3.0.220" />
+    <PackageReference Include="NUnit" Version="2.6.1" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="drivers\" />
@@ -20,6 +19,7 @@
     <Folder Include="pageSteps\" />
     <Folder Include="Utils\" />
     <Folder Include="testCases\" />
+    <Folder Include="features\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Class1.cs" />

@@ -1,29 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.IO;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Safari;
 using OpenQA.Selenium.Support.UI;
-using SeleniumExtras.WaitHelpers;
 
 namespace Selenium_CS_Cucumber.Utils
 {
-    public class Utils
+    public static class Utils
     {
-        public static IWebDriver driver = null;
+        public static IWebDriver driver;
 
         public static IWebDriver OpenBrowser(string URL, string browserName)
         {
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-
             switch (browserName)
             {
                 case "chrome":
                     ChromeOptions options = new ChromeOptions();
                     options.AddArgument("no-sandbox");
-                    driver = new ChromeDriver(@"../../drivers/chromedriver");
+                    driver = new ChromeDriver(Path.Combine(Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName, @"drivers/"));
                     break;
                 case "firefox":
                     driver = new FirefoxDriver();
@@ -36,8 +33,11 @@ namespace Selenium_CS_Cucumber.Utils
                     driver = new FirefoxDriver();
                     break;
             }
-                
-                driver.Url = URL;
+
+            driver.Url = URL;
+
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+
             return driver;
         }
 

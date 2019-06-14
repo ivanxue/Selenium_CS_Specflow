@@ -8,8 +8,7 @@ namespace Selenium_CS_Cucumber.pageObjects
     {
         IWebDriver driver;
 
-        [FindsBy(How = How.Name, Using = "reserveFlights")]
-        public IWebElement reserveBtn { get; set; }
+        public IWebElement reserveBtn => driver.FindElement(By.Name("reserveFlights"));
 
         public SelectFlightPage(IWebDriver driver)
         {

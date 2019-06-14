@@ -7,20 +7,15 @@ namespace Selenium_CS_Cucumber.pageObjects
     {
         private IWebDriver driver;
 
-        [FindsBy(How = How.Name, Using = "passFirst0")]
-        public IWebElement firstNameInput { get; set; }
+        public IWebElement firstNameInput => driver.FindElement(By.Name("passFirst0"));
 
-        [FindsBy(How = How.Name, Using = "passLast0")]
-        public IWebElement lastNameInput { get; set; }
+        public IWebElement lastNameInput => driver.FindElement(By.Name("passLast0"));
 
-        [FindsBy(How = How.Name, Using = "creditnumber")]
-        public IWebElement creditNumberInput { get; set; }
+        public IWebElement creditNumberInput => driver.FindElement(By.Name("creditnumber"));
 
-        [FindsBy(How = How.Name, Using = "ticketLess")]
-        public IWebElement ticketlessTravelCheck { get; set; }
+        public IWebElement ticketlessTravelCheck => driver.FindElement(By.Name("ticketLess"));
 
-        [FindsBy(How = How.Name, Using = "buyFlights")]
-        public IWebElement securePurchaseBtn { get; set; }
+        public IWebElement securePurchaseBtn => driver.FindElement(By.Name("buyFlights"));
 
         public BookFlightPage(IWebDriver driver)
         {

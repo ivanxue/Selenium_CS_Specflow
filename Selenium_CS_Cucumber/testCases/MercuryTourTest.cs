@@ -1,6 +1,7 @@
 ﻿using System;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Firefox;
 using Selenium_CS_Cucumber.pageObjects;
 
 namespace Selenium_CS_Cucumber.testCases
@@ -25,16 +26,42 @@ namespace Selenium_CS_Cucumber.testCases
             confirmationPage = new ConfirmationPage(driver);
         }
 
-        [Test]
-        public void login()
+        [TestCase("Sydney", "London")]
+        [TestCase("London", "Sydney")]
+        public void MecurityTest(string from, string to)
         {
             Utils.Utils.WaitForElement(loginPage.userNameInput);
             Utils.Utils.ValidatePageTitle("Welcome: Mercury Tours");
 
             loginPage.login("mercury", "mercury");
 
+            Utils.Utils.WaitForElement(findFlightPage.tripTypeRadio);
+            Utils.Utils.ValidatePageTitle("Find a Flight: Mercury Tours:");
+
+            findFlightPage.FindFlight(from, to);
+
+            Utils.Utils.WaitForElement(selectFlightPage.reserveBtn);
+            Utils.Utils.ValidatePageTitle("Select a Flight: Mercury Tours");
+
+            selectFlightPage.reserveFlight();
+
+            Utils.Utils.WaitForElement(bookFlightPage.firstNameInput);
+            Utils.Utils.ValidatePageTitle("Book a Flight: Mercury Tours");
+
+            bookFlightPage.BookFlight("Ivan", "Xue", "12345678");
+
+            Utils.Utils.WaitForElement(confirmationPage.backToHomeBtn);
+            Utils.Utils.ValidatePageTitle("Flight Confirmation: Mercury Tours");
+
+            confirmationPage.ReviewFlight();
+
         }
 
-    
+        [TearDown]
+        public void CloseBrowser()
+        {
+            driver.Close();
+            driver.Quit();
+        }
     }
 }

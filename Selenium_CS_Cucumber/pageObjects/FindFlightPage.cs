@@ -8,20 +8,15 @@ namespace Selenium_CS_Cucumber.pageObjects
     {
         private IWebDriver driver;
 
-        [FindsBy(How = How.Name, Using = "tripType")]
-        public IWebElement tripTypeRadio { get; set; }
+        public IWebElement tripTypeRadio => driver.FindElement(By.Name("tripType"));
 
-        [FindsBy(How = How.Name, Using = "fromPort")]
-        public IWebElement fromDropdown { get; set; }
+        public IWebElement fromDropdown => driver.FindElement(By.Name("fromPort"));
 
-        [FindsBy(How = How.Name, Using = "toPort")]
-        public IWebElement toDropdown { get; set; }
+        public IWebElement toDropdown => driver.FindElement(By.Name("toPort"));
 
-        [FindsBy(How = How.Name, Using = "servClass")]
-        public IWebElement servClassRadio { get; set; }
+        public IWebElement servClassRadio => driver.FindElement(By.Name("servClass"));
 
-        [FindsBy(How = How.Name, Using = "findFlights")]
-        public IWebElement continueFindBtn { get; set; }
+        public IWebElement continueFindBtn => driver.FindElement(By.Name("findFlights"));
 
         public FindFlightPage(IWebDriver driver) 
         {

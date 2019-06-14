@@ -6,16 +6,13 @@ namespace Selenium_CS_Cucumber.pageObjects
 {
     public class LoginPage
     {
-        IWebDriver driver;
+        private readonly IWebDriver driver;
 
-        [FindsBy(How = How.Name, Using = "userName")]
-        public IWebElement userNameInput { get; set; }
+        public IWebElement userNameInput => driver.FindElement(By.Name("userName"));
 
-        [FindsBy(How = How.Name, Using = "password")]
-        public IWebElement passwordInput { get; set; }
+        public IWebElement passwordInput => driver.FindElement(By.Name("password"));
 
-        [FindsBy(How = How.Name, Using = "login")]
-        public IWebElement loginBtn { get; set; }
+        public IWebElement loginBtn => driver.FindElement(By.Name("login"));
 
         public LoginPage(IWebDriver driver)
         {
